@@ -17,7 +17,7 @@ void Arbol::Insertar(int valor)
 	}
 	else 
 	{
-		delete temp;
+		//delete temp;
 		raiz->Insertar(valor);
 	}
 }

@@ -33,7 +33,7 @@ NodoLigado* NodoLigado::GetIzquierda()
 
 void NodoLigado::Insertar(int valor)
 {
-	if (valor > dato) 
+	if (valor > this->dato) 
 	{
 		if (derecha == NULL) 
 		{
@@ -43,20 +43,20 @@ void NodoLigado::Insertar(int valor)
 		{
 			derecha->Insertar(valor);
 		}
+		//cout << "mayor" << endl;
 	}
-	else if (valor < dato) 
+	else if (valor < this->dato) 
 	{
-		
-		if (izquierda = NULL) 
+		if (izquierda == NULL)
 		{
 			izquierda = new NodoLigado(valor);
 		}
-		else 
+		else
 		{
 			izquierda->Insertar(valor);
 		}
+		//cout << "menor" << endl;
 	}
-
 }
 
 void NodoLigado::InOrder(NodoLigado * temp) 
