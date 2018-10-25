@@ -8,7 +8,7 @@ Arbol::Arbol()
 	raiz = NULL;
 }
 
-void Arbol::Insertar(int valor)
+void Arbol::Insertar(int valor,NodoLigado * aux)
 {
 	NodoLigado *temp=new NodoLigado(valor);
 	if (raiz == NULL) 
@@ -17,20 +17,45 @@ void Arbol::Insertar(int valor)
 	}
 	else 
 	{
-		//delete temp;
-		raiz->Insertar(valor);
+		if (valor > aux->GetDato())
+		{
+			if (aux->GetDerecha() == NULL)
+			{
+				aux->SetDerecha(temp);
+			}
+			else
+			{
+				Insertar(valor, aux->GetDerecha());
+			}
+			//cout << "mayor" << endl;
+		}
+		else if (valor < aux->GetDato())
+		{
+			if (aux->GetIzquierda() == NULL)
+			{
+				aux->SetIzquierda(temp);
+			}
+			else
+			{
+				Insertar(valor, aux->GetIzquierda()); 
+			}
+			//cout << "menor" << endl;
+		}
 	}
 }
 
-void Arbol::InOrder() 
+NodoLigado* Arbol::GetRaiz() 
 {
-	if (raiz == NULL) 
+	return this->raiz;
+}
+
+void Arbol::InOrder(NodoLigado* temp) 
+{
+	if (temp != NULL)
 	{
-		cout << " Arbol vacio"<<endl;
-	}
-	else 
-	{
-		raiz->InOrder(raiz);
+		InOrder(temp->GetIzquierda());
+		cout << temp->GetDato() << " ";
+		InOrder(temp->GetDerecha());
 	}
 
 }

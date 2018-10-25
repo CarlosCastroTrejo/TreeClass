@@ -5,8 +5,9 @@ class Arbol
 	NodoLigado *raiz;
 public:
 	Arbol();
-	void Insertar(int);
-	void InOrder();
+	void Insertar(int,NodoLigado*);
+	void InOrder(NodoLigado*);
+	NodoLigado* GetRaiz();
 	~Arbol();
 };
 

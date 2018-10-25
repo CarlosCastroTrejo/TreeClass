@@ -31,44 +31,19 @@ NodoLigado* NodoLigado::GetIzquierda()
 	return this->izquierda;
 }
 
-void NodoLigado::Insertar(int valor)
+NodoLigado* NodoLigado::GetDerecha()
 {
-	if (valor > this->dato) 
-	{
-		if (derecha == NULL) 
-		{
-			derecha = new NodoLigado(valor);
-		}
-		else 
-		{
-			derecha->Insertar(valor);
-		}
-		//cout << "mayor" << endl;
-	}
-	else if (valor < this->dato) 
-	{
-		if (izquierda == NULL)
-		{
-			izquierda = new NodoLigado(valor);
-		}
-		else
-		{
-			izquierda->Insertar(valor);
-		}
-		//cout << "menor" << endl;
-	}
+	return this->derecha;
 }
 
-void NodoLigado::InOrder(NodoLigado * temp) 
+void NodoLigado::SetDerecha(NodoLigado* temp) 
 {
-	if (temp != NULL) 
-	{
-		InOrder(temp->izquierda);
-		cout << temp->dato<<" ";
-		InOrder(temp->derecha);
-		
-	}
+	this->derecha = temp;
+}
 
+void NodoLigado::SetIzquierda(NodoLigado* temp)
+{
+	this->izquierda = temp;
 }
 
 

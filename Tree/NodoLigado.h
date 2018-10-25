@@ -10,8 +10,10 @@ public:
 	void SetDato(int);
 	int GetDato();
 	NodoLigado* GetIzquierda();
-	void Insertar(int);
-	void InOrder(NodoLigado*);
+	NodoLigado* GetDerecha();
+	void SetDerecha(NodoLigado*);
+	void SetIzquierda(NodoLigado*);
+
 	~NodoLigado();
 };
 
